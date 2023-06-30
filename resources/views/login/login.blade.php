@@ -14,35 +14,35 @@
         <div class="d-flex justify-content-center md-48 ">
             <span class="material-icons" >&#xe3ae;</span>
             
-            
         </div>
         <div class="text-center fs-1 fw-semibold">
             login
         </div>
-        <div class="input-group mt-2">
-            <div class="input-group-text bg-info">
-                <span class="material-icons md-48">&#xe853;</span>
+        <!-- OJO NO TOCAR LO SIGUIENTE -->
+        <form action="{{ route('usuarios.autenticar') }}" method="POST">
+        @csrf
+            <div class="input-group mt-2">
+                <div class="input-group-text bg-info">
+                    <span class="material-icons md-48">&#xe853;</span>
+                </div>
+                <input class="form-control" type="text" name="user" placeholder="Usuario">
             </div>
-            <input class="form-control" type="text" placeholder="Usuario">
-        </div>
-        <div class="input-group mt-3 pb-1">
-            <div class="input-group-text bg-info">
-                <span class="material-icons md-48">&#xe897;</span>
+            <div class="input-group mt-3 pb-1">
+                <div class="input-group-text bg-info">
+                    <span class="material-icons md-48">&#xe897;</span>
+                </div>
+                <input class="form-control" type="password" name="password" placeholder="Contraseña">
             </div>
-            <input class="form-control" type="password" placeholder="Contraseña">
-        </div>
-        <div class="d-flex flex-column pb-2 text-center">
-            <div>
-                <a href="#" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Crear cuenta artista</a>
+            <div class="d-flex flex-column pb-2 text-center">
+                <div>
+                    <a href="#" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Crear cuenta artista</a>
+                </div>
+                <div>
+                    <a href="#" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Ver fotos</a>
+                </div>
             </div>
-            <div>
-                <a href="#" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Ver fotos</a>
-            </div>
-        </div>
-        <div class="btn btn-info fw-bold justify-content-center w-100">
-            Login
-        </div>
-
+             <button type="submit" class="btn btn-info fw-bold justify-content-center w-100">Login</button> <!-- Cambiamos el <div> por un <button> y agregamos el atributo type="submit" -->
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 </body>

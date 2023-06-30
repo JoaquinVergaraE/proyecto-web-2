@@ -9,4 +9,13 @@ class LogController extends Controller
 
         return view('login.login');
     }
+
+    public function index(){
+        // return "Hola Mundo Laravel";
+        return view('login.index');
+    }
+    public function login2() {
+
+        return view('login.login2');
+    }
 }   
