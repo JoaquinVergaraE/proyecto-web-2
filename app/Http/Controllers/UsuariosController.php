@@ -33,4 +33,6 @@ class UsuariosController extends Controller
             'user' => 'Credenciales Incorrectas',
         ])->onlyInput('user');
     }
+
+    
 }

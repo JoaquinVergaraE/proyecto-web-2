@@ -35,7 +35,7 @@
             </div>
             <div class="d-flex flex-column pb-2 text-center">
                 <div>
-                    <a href="#" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Crear cuenta artista</a>
+                    <a href="{{ route('cuentas.index') }}" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Crear cuenta artista</a>
                 </div>
                 <div>
                     <a href="#" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Ver fotos</a>
