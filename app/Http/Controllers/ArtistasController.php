@@ -20,8 +20,11 @@ class ArtistasController extends Controller
     }
 
     public function listar(){
-        return view('artistas.listar');
+        $user = Auth::guard('web')->user();
+        $imagenes = $user->imagenes;
+        return view('artistas.listar', compact('imagenes'));
     }
+
     public function agregar(){
         return view('artistas.agregar');
     }
@@ -33,14 +36,11 @@ class ArtistasController extends Controller
         $imagen->baneada = false;
         $imagen->motivo_ban = null;
         $imagen->cuenta_user = $user->user;
-        //if ($request->hasFile('imagen')){
-            $archivo=$request->file('imagenn');
-            $nombreArchivo = uniqid().'.'.$archivo->extension();
-            $archivo->storeAs('images', $nombreArchivo);
-            $rutaArchivo = $archivo->storeAs('images', $nombreArchivo);
-            $imagen->archivo = $rutaArchivo;
-        //}
-
+        $archivo=$request->file('imagenn');
+        $nombreArchivo = uniqid().'.'.$archivo->extension();
+        $archivo->storeAs('images', $nombreArchivo);
+        $rutaArchivo = $archivo->storeAs('images', $nombreArchivo);
+        $imagen->archivo = $rutaArchivo;
         $imagen->save();
 
         return redirect()->route('artistas.gestionar')->with('success', 'Imagen guardada exitosamente');

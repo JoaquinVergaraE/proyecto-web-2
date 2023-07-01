@@ -1,3 +1,6 @@
+@extends('templates.master')
+
+@section('contenido-principal')
 <form action="{{ route('artistas.guardarImagen') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div>
@@ -12,3 +15,4 @@
         <button type="submit">Guardar imagen</button>
     </div>
 </form>
+@endsection
