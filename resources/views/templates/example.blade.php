@@ -1,33 +1,16 @@
 @extends('templates.master')
 
 @section('contenido-principal')
-<div class="bg-primary p-4 rounded-4 text-info d-flex ">
-    form action="{{route('cuentas.store')}}" method="POST">
-    @csrf
-
-    <div>
-        <label for="nombre">Usuario:</label>
-        <input type="text" name="usuario" id="user" required>
+<div class="bg-primary p-4 rounded-4 text-info ">
+    <div class="d-flex justify-content-center md-48 ">
+        <span class="material-icons" >&#xe3ae;</span>
+        
     </div>
-
-    <div>
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" name="password" id="password" required>
+    <div class="text-center fs-1 fw-semibold">
+        Opciones
     </div>
-
-    <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" required>
+    <div class="list-group">
+        <a href="{{route('artistas.gestionar')}}" class="list-group-item">Gestionar fotos</a>
+        <a href="#" class="list-group-item">Ver fotos baneadas</a>
     </div>
-    <div>
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" id="apellido" required>
-    </div>
-    
-
-    <!-- Otros campos y elementos del formulario -->
-
-    <button type="submit">Crear cuenta</button>
-</form>
-</div>
 @endsection

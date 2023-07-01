@@ -24,6 +24,7 @@ use App\Http\Controllers\CuentasController;
 
 Route::get('/', [LogController::class, 'login'])->name('login');
 
+
 Route::post('/usuarios/login',[UsuariosController::class,'autenticar'])->name('usuarios.autenticar');
 
 Route::get('/cuentas',[CuentasController::class,'index'])->name('cuentas.index');
@@ -39,6 +40,9 @@ Route::get('/artistas/editar', [ArtistasController::class, 'editar'])->name('art
 Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('artistas.borrar');
 
 Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index');
+
+
+
 
 
 
