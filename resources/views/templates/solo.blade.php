@@ -14,11 +14,8 @@
     <div class="container-fluid px-0 mx-0 bg-primary" data-bs-theme="dark"   >
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand"></a>
-          <form action="/logout" method="POST" class="d-flex">
-            @csrf
-            <a href="{{route('usuarios.salir')}}" class="text-decoration-non text-info fw-semibold fst-italic">Cerrar Sesión</a>
-          </form>
+          <a class="navbar-brand">Bienvenido!</a>
+          
         </div>
       </nav>
     </div>
