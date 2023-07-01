@@ -19,7 +19,7 @@
                                 @if($imagen->baneada)
                                 <button class="btn btn-danger btn-sm" disabled>Desbanear</button>
                                 @else
-                                <form action="/banear-imagen/{{ $imagen->id }}" method="POST">
+                                <form action="/banear-imagen/{{ $imagen->id }}" method="POST" onsubmit="return confirm('¿Estas seguro que quieres banear esta imagen?')">
                                     @csrf
                                     <div class="input-group">
                                         <input type="text" class="form-control form-control-sm" name="motivo_ban" placeholder="Razón de ban" required>

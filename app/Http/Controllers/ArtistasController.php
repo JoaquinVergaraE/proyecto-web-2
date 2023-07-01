@@ -25,6 +25,22 @@ class ArtistasController extends Controller
         return view('artistas.listar', compact('imagenes'));
     }
 
+    public function cambiarTitulo(Request $request)
+    {
+    $imagenId = $request->input('imagenId');
+    $nuevoTitulo = $request->input('nuevoTitulo');
+
+    // Buscar y actualizar la imagen correspondiente en la base de datos
+    $imagen = Imagen::find($imagenId);
+    $imagen->titulo = $nuevoTitulo;
+    $imagen->save();
+
+    // Redireccionar nuevamente a la misma página
+    return redirect()->back();
+    }
+
+
+
     public function agregar(){
         return view('artistas.agregar');
     }
@@ -46,9 +62,33 @@ class ArtistasController extends Controller
         return redirect()->route('artistas.gestionar')->with('success', 'Imagen guardada exitosamente');
     }
     public function editar(){
-        return view('artistas.editar');
+        $user = Auth::guard('web')->user();
+        $imagenes = $user->imagenes;
+        return view('artistas.editar', compact('imagenes'));
     }
     public function borrar(){
-        return view('artistas.borrar');
+        $user = Auth::guard('web')->user();
+        $imagenes = $user->imagenes;
+        return view('artistas.borrar', compact('imagenes'));
+    }
+
+    public function borrarImagen(Request $request){
+        $imagenId = $request->input('imagenId');
+        
+        // Obtener la imagen a eliminar
+        $imagen = Imagen::find($imagenId);
+        
+        // Verificar si la imagen existe y pertenece al usuario autenticado
+        if ($imagen && $imagen->artista_id === auth()->user()->id) {
+            // Eliminar la imagen del almacenamiento
+            Storage::delete('images/' . $imagen->archivo);
+            
+            // Eliminar la imagen de la base de datos
+            $imagen->delete();
+            
+            return redirect()->back()->with('success', 'La imagen ha sido eliminada correctamente.');
+        }
+        
+        return redirect()->back()->with('error', 'No se pudo eliminar la imagen.');
     }
 }

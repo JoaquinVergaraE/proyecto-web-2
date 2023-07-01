@@ -41,6 +41,9 @@ Route::get('/artistas/agregar', [ArtistasController::class, 'agregar'])->name('a
 Route::post('/artistas/agregar', [ArtistasController::class, 'guardarImagen'])->name('artistas.guardarImagen')->middleware('auth');
 Route::get('/artistas/editar', [ArtistasController::class, 'editar'])->name('artistas.editar')->middleware('auth');
 Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('artistas.borrar')->middleware('auth');
+Route::post('/cambiar-titulo', [ArtistasController::class, 'cambiarTitulo'])->name('artistas.cambiarTitulo')->middleware('auth');
+Route::post('/artistas/borrar-imagen', [ArtistasController::class, 'borrarImagen'])->name('artistas.borrarImagen')->middleware('auth');
+
 
 Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');
 Route::get('/administradores/listar', [AdministradoresController::class, 'listar'])->name('administradores.listar')->middleware('auth');
