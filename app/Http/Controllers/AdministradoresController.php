@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Perfil;
+use App\Models\Cuenta;
+use App\Models\Imagen;
 
 class AdministradoresController extends Controller
 {
@@ -13,7 +15,9 @@ class AdministradoresController extends Controller
     }
     
     public function banDesban(){
-        return view('administradores.banDesban');
+        $cuentas = Cuenta::where('perfil_id', 2)->get();
+        $imagenes = Imagen::all();
+        return view('administradores.banDesban', compact('cuentas'));
     }
 
     public function listar(){
