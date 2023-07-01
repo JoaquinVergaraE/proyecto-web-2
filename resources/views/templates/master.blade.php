@@ -13,18 +13,17 @@
     <div class="container-fluid px-0 mx-0 bg-primary" data-bs-theme="dark"   >
         <nav class="navbar navbar-expand-lg  bg-primary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand" href="#">Bienvenido</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="navbar-brand" href="{{ route('login') }}">Home</a>
+                  <a class="navbar-brand" href="{{ route('login') }}">Inicio</a>
                   <form action="/logout" method="POST">
                     @csrf
-                    <a class="nav-link" href="#">Cerrar Sesión</a>
+                    <a href="{{route('usuarios.salir')}}" class="text-white">Cerrar Sesión</a>
                   </form>
-                  <a class="nav-link disabled">Disabled</a>
                 </div>
               </div>
             </div>

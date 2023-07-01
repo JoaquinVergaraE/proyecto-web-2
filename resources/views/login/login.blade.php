@@ -10,7 +10,7 @@
         login
     </div>
     <!-- OJO NO TOCAR LO SIGUIENTE -->
-    <form action="{{ route('usuarios.autenticar') }}" method="POST">
+    <form method="POST" action="{{ route('usuarios.autenticar') }}">
     @csrf
         <div class="input-group mt-2">
             <div class="input-group-text bg-info">

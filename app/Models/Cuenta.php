@@ -11,6 +11,7 @@ class Cuenta extends Authenticatable
 {
     protected $table = 'cuentas';
     protected $primaryKey = 'user';
+    protected $keyType = 'string';
     protected $fillable = ['password'. 'nombre', 'apellido'];
     public $timestamps = false;
 

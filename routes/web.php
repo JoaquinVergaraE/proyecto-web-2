@@ -26,20 +26,20 @@ Route::get('/', [LogController::class, 'login'])->name('login');
 
 
 Route::post('/usuarios/login',[UsuariosController::class,'autenticar'])->name('usuarios.autenticar');
+Route::get('/usuarios/salir',[UsuariosController::class,'salir'])->name('usuarios.salir');
 
 Route::get('/cuentas',[CuentasController::class,'index'])->name('cuentas.index');
 Route::post('/cuentas',[CuentasController::class,'store'])->name('cuentas.store');
 
-Route::get('/artistas', [ArtistasController::class, 'index'])->name('artistas.index');
-Route::get('/artistas/gestionar', [ArtistasController::class, 'gestionar'])->name('artistas.gestionar');
-Route::get('/artistas/listar', [ArtistasController::class, 'listar'])->name('artistas.listar');
-Route::get('/artistas/agregar', [ArtistasController::class, 'agregar'])->name('artistas.agregar');
-Route::post('/artistas/agregar', [ArtistasController::class, 'guardarImagen'])->name('artistas.guardarImagen');
+Route::get('artistas', [ArtistasController::class, 'index'])->name('artistas.index')->middleware('auth');
+Route::get('/artistas/gestionar', [ArtistasController::class, 'gestionar'])->name('artistas.gestionar')->middleware('auth');
+Route::get('/artistas/listar', [ArtistasController::class, 'listar'])->name('artistas.listar')->middleware('auth');
+Route::get('/artistas/agregar', [ArtistasController::class, 'agregar'])->name('artistas.agregar')->middleware('auth');
+Route::post('/artistas/agregar', [ArtistasController::class, 'guardarImagen'])->name('artistas.guardarImagen')->middleware('auth');
+Route::get('/artistas/editar', [ArtistasController::class, 'editar'])->name('artistas.editar')->middleware('auth');
+Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('artistas.borrar')->middleware('auth');
 
-Route::get('/artistas/editar', [ArtistasController::class, 'editar'])->name('artistas.editar');
-Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('artistas.borrar');
-
-Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index');
+Route::get('/administradores/', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');
 
 
 

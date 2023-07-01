@@ -1,1 +1,1 @@
-<h1>ADMINISTRADORES INDEX</h1>
+<h1>Bienvenido, {{ auth()->user()}} </h1>

@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Imagen;
 use App\Models\Cuenta;
+use App\Models\Perfil;
 
 class ArtistasController extends Controller
 {
     public function index(){
-        // return "Hola Mundo Laravel";
         return view('artistas.index');
     }
 
