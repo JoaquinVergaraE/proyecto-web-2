@@ -16,6 +16,10 @@
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand text-info fw-semibold" href="{{route('login')}}">Home</a>
+          <div class="d-flex text-center">
+            <a class="navbar-brand text-decoration-non text-info fw-semibold fst-italic" href="{{route('artistas.gestionar')}}">Volver</a>
+          </div>
+          
           <form action="/logout" method="POST" class="d-flex">
             @csrf
             <a href="{{route('usuarios.salir')}}" class="text-decoration-non text-info fw-semibold fst-italic">Cerrar Sesión</a>
