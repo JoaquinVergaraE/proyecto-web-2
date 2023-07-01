@@ -2,9 +2,19 @@
 
 @section('contenido-principal')
 <div class="bg-primary p-4 rounded-4 text-info ">
+    <div class="d-flex justify-content-center md-48  ">
+        <span class="material-icons" >&#xe3ae;</span>
+        
+    </div>
+    <div class="text-center">
+        <span>Artista</span>
+    </div>
+    <div class="text-center fs-1 fw-semibold">
+        <h1>{{ auth()->user()->user}} </h1>
+    </div>
     <form action="{{ route('artistas.guardarImagen') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="input-group mt-2 d-flex container">
+        <div class="input-group mt-2 d-flex container mt-3">
             <div class="input-group-text bg-info">
                 <span class="material-icons md-48">&#xe161;</span>
             </div>

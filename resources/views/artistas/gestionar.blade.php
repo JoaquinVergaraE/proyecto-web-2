@@ -4,8 +4,15 @@
 
 <body class="bg-secondary d-flex justify-content-center align-items-center vh-100" >
     <div class="bg-primary p-4 rounded-4 text-info ">
+        <div class="d-flex justify-content-center md-48 ">
+            <span class="material-icons" >&#xe3ae;</span>
+            
+        </div>
+        <div class="text-center">
+            <span>Artista</span>
+        </div>
         <div class="text-center fs-1 fw-semibold">
-            <h1>Bienvenido,  {{ auth()->user()->user}} </h1>
+            <h1>{{ auth()->user()->user}} </h1>
         </div>
         <div class="list-group d-flex flex-column pb-2 text-center">
 
