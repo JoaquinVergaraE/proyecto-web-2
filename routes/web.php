@@ -23,9 +23,6 @@ use App\Http\Controllers\CuentasController;
 */
 
 Route::get('/', [LogController::class, 'login'])->name('login');
-/*ESTOS LOS HABIA USADO PARA PROBAR EN BASE A ID 1 E ID 2*/
-//Route::get('/login', [LogController::class, 'index'])->name('login.index');
-//Route::get('/login2', [LogController::class, 'login2'])->name('login.login2');
 
 Route::post('/usuarios/login',[UsuariosController::class,'autenticar'])->name('usuarios.autenticar');
 
@@ -36,6 +33,8 @@ Route::get('/artistas', [ArtistasController::class, 'index'])->name('artistas.in
 Route::get('/artistas/gestionar', [ArtistasController::class, 'gestionar'])->name('artistas.gestionar');
 Route::get('/artistas/listar', [ArtistasController::class, 'listar'])->name('artistas.listar');
 Route::get('/artistas/agregar', [ArtistasController::class, 'agregar'])->name('artistas.agregar');
+Route::post('/artistas/agregar', [ArtistasController::class, 'guardarImagen'])->name('artistas.guardarImagen');
+
 Route::get('/artistas/editar', [ArtistasController::class, 'editar'])->name('artistas.editar');
 Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('artistas.borrar');
 
