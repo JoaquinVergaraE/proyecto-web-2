@@ -14,10 +14,10 @@
     </div>
     <div class="list-group d-flex flex-column pb-2 text-center">
         <div class="rounded-3">
-            <a href="{{route('artistas.gestionar')}}" class="list-group-item text-decoration-non fw-semibold fst-italic bg-info text-light " style="font-size:0.9rem; border: 1px solid black;">Listar perfiles</a>
+            <a href="{{route('administradores.listar')}}" class="list-group-item text-decoration-non fw-semibold fst-italic bg-info text-light " style="font-size:0.9rem; border: 1px solid black;">Listar perfiles</a>
         </div>
         <div class="rounded-3 mt-3">
-            <a href="{{route('artistas.gestionar')}}" class="list-group-item text-decoration-non fw-semibold fst-italic bg-info text-light " style="font-size:0.9rem; border: 1px solid black;">Editar perfiles</a>
+            <a href="{{route('administradores.banDesban')}}" class="list-group-item text-decoration-non fw-semibold fst-italic bg-info text-light " style="font-size:0.9rem; border: 1px solid black;">Banear/Desbanear fotos</a>
         </div>
     </div>
 @endsection

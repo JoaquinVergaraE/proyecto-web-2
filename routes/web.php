@@ -6,6 +6,7 @@ use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\AdministradoresController;
 use App\Http\Controllers\ArtistasController;
 use App\Http\Controllers\CuentasController;
+use App\Http\Controllers\sinCuentasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,8 @@ Route::get('/usuarios/salir',[UsuariosController::class,'salir'])->name('usuario
 Route::get('/cuentas',[CuentasController::class,'index'])->name('cuentas.index');
 Route::post('/cuentas',[CuentasController::class,'store'])->name('cuentas.store');
 
+Route::get('/sinCuentas',[sinCuentasController::class,'index'])->name('sincuentas.index');
+
 Route::get('artistas', [ArtistasController::class, 'index'])->name('artistas.index')->middleware('auth');
 Route::get('/artistas/gestionar', [ArtistasController::class, 'gestionar'])->name('artistas.gestionar')->middleware('auth');
 Route::get('/artistas/listar', [ArtistasController::class, 'listar'])->name('artistas.listar')->middleware('auth');
@@ -39,7 +42,9 @@ Route::post('/artistas/agregar', [ArtistasController::class, 'guardarImagen'])->
 Route::get('/artistas/editar', [ArtistasController::class, 'editar'])->name('artistas.editar')->middleware('auth');
 Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('artistas.borrar')->middleware('auth');
 
-Route::get('/administradores/', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');
+Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');
+Route::get('/administradores/listar', [AdministradoresController::class, 'listar'])->name('administradores.listar')->middleware('auth');
+Route::get('/administradores/banDesban', [AdministradoresController::class, 'banDesban'])->name('administradores.banDesban')->middleware('auth');
 
 
 

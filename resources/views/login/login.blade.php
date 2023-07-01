@@ -29,10 +29,10 @@
                 <a href="{{ route('cuentas.index') }}" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Crear cuenta artista</a>
             </div>
             <div>
-                <a href="#" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Ver fotos</a>
+                <a href="{{ route ('sincuentas.index')}}" class="text-decoration-non text-info fw-semibold fst-italic" style="font-size:0.9rem">Ver fotos</a>
             </div>
         </div>
-         <button type="submit" class="btn btn-info fw-bold justify-content-center w-100">Login</button> <!-- Cambiamos el <div> por un <button> y agregamos el atributo type="submit" -->
+         <button type="submit" class="btn btn-info fw-bold justify-content-center w-100">Login</button>
     </form>
 </div>
 @endsection
