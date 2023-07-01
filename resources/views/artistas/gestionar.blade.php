@@ -5,11 +5,7 @@
 <body class="bg-secondary d-flex justify-content-center align-items-center vh-100" >
     <div class="bg-primary p-4 rounded-4 text-info ">
         <div class="text-center fs-1 fw-semibold">
-            @if (auth()->user()->perfil->cuentas->isNotEmpty())
-                <h1>Bienvenido, {{ auth()->user()->cuenta}}</h1>
-            @else
-                <h1>No se encontró una cuenta asociada al perfil.</h1>
-            @endif
+            <h1>Bienvenido, Usuario: {{ auth()->user()->user}} </h1>
         </div>
         <div class="list-group">
             <a href="{{route('artistas.listar')}}" class="list-group-item">Listar fotos</a>

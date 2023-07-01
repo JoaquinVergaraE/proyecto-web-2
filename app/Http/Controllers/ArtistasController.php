@@ -32,8 +32,7 @@ class ArtistasController extends Controller
         $imagen->archivo = '';
         $imagen->baneada = false;
         $imagen->motivo_ban = null;
-        $imagen->cuenta_user = "carlos_guerra";
-        
+        $imagen->cuenta_user = $user->user;
         //if ($request->hasFile('imagen')){
             $archivo=$request->file('imagenn');
             $nombreArchivo = uniqid().'.'.$archivo->extension();

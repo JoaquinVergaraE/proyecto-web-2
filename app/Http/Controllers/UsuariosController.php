@@ -16,13 +16,13 @@ class UsuariosController extends Controller
 
         
         if(Auth::attempt(['user'=>$user,'password'=>$password])){
-            //$cuenta = Cuenta::where('user', $user)->first();
-            //if ($cuenta->perfil_id == 1) {
-                //return redirect()->route('administradores.index');
+            $cuenta = Cuenta::where('user', $user)->first();
+            if ($cuenta->perfil_id == 1) {
+                return redirect()->route('administradores.index');
                 return view('administradores.index');
-            //} elseif ($cuenta->perfil_id == 2) {
-            //    return redirect()->route('artistas.index', ['user' => $user]);
-            //}
+            } elseif ($cuenta->perfil_id == 2) {
+                return redirect()->route('artistas.index');
+            }
         
         }
 
