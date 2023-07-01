@@ -1,4 +1,4 @@
-@extends('templates.solo')
+@extends('templates.master')
 @section('contenido-principal')
 
 <div class="bg-primary p-4 rounded-4 text-info ">
@@ -6,7 +6,7 @@
         <span class="material-icons" >&#xe3ae;</span>
         <div class="row">
             <div class="col-md-12">
-                <h3>Lista de artistas disponibles</h3>
+                <h3>Lista de artistas registrados</h3>
             </div>
             <div class="col-md-12">
                 <div id="accordion">
@@ -15,7 +15,7 @@
                         <div class="card-header" id="heading{{ $usuario->id }}">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ $usuario->nombre }}" aria-expanded="true" aria-controls="collapse{{ $usuario->nombre }}">
-                                    {{ $usuario->nombre }} {{ $usuario->apellido }}
+                                    Usuario: {{ $usuario->user }}
                                 </button>
                             </h2>
                         </div>
@@ -50,4 +50,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 @endsection
-

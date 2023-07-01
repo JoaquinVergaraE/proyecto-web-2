@@ -37,20 +37,6 @@ class cuentas extends Seeder
                 'perfil_id' => 2,
             ],
             [
-                'user' => 'evelyn_paz',
-                'password' => Hash::make('ep3'),
-                'nombre' => 'Evelyn',
-                'apellido' => 'Paz',
-                'perfil_id' => 3,
-            ],
-            [
-                'user' => 'shaggy_kratos',
-                'password' => Hash::make('sk3'),
-                'nombre' => 'Shaggy',
-                'apellido' => 'Kratos',
-                'perfil_id' => 3,
-            ],
-            [
                 'user' => 'fabian_bros',
                 'password' => Hash::make('fb1'),
                 'nombre' => 'Fabian',

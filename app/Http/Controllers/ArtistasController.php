@@ -101,4 +101,10 @@ class ArtistasController extends Controller
         $imagenes = $user->imagenes;
         return view('artistas.baneadas', compact('imagenes'));
     }
+
+    public function verArtistas(){
+        $usuarios = Cuenta::where('perfil_id', 2)->get();
+        $imagenes = Imagen::all();
+        return view('artistas.verArtistas', compact('usuarios', 'imagenes'));
+    }
 }

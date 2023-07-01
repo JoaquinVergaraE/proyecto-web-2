@@ -12,7 +12,7 @@ class imagenes extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
+    {/*
         DB::table('imagenes')->insert([
             [
                 'titulo' => 'Paisaje',
@@ -57,5 +57,6 @@ class imagenes extends Seeder
                 'cuenta_user' => 'ian_dodman',
             ],
         ]);
+    */
     }
 }

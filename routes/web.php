@@ -46,6 +46,7 @@ Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('art
 Route::post('/cambiar-titulo', [ArtistasController::class, 'cambiarTitulo'])->name('artistas.cambiarTitulo')->middleware('auth');
 Route::post('/artistas/borrar-imagen', [ArtistasController::class, 'borrarImagen'])->name('artistas.borrarImagen')->middleware('auth');
 Route::get('/artistas/baneadas', [ArtistasController::class, 'baneadas'])->name('artistas.baneadas')->middleware('auth');
+Route::get('/artistas/verArtistas', [ArtistasController::class, 'verArtistas'])->name('artistas.verArtistas')->middleware('auth');
 
 
 Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');

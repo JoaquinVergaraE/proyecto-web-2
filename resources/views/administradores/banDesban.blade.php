@@ -17,13 +17,13 @@
         <ul class="list-group">
             @foreach($cuentas as $cuenta)
                 <li class="list-group-item">
-                    <h4>{{ $cuenta->user }}</h4>
+                    <h4>Nombre de usuario: {{ $cuenta->user }}</h4>
                     <ul class="list-group">
                         @foreach($cuenta->imagenes as $imagen)
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h5>{{ $imagen->titulo }}</h5>
+                                    <h5>Titulo de la imagen: {{ $imagen->titulo }}</h5>
                                 </div>
                                 <div class="col-md-4">
                                     @if($imagen->baneada)
