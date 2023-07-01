@@ -1,4 +1,4 @@
-@extends('templates.master')
+@extends('templates.solo')
 
 @section('contenido-principal')
 <div class="bg-primary p-4 rounded-4 text-info align-items-center ">
