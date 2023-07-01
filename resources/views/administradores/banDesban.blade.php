@@ -17,9 +17,15 @@
                             </div>
                             <div class="col-md-4">
                                 @if($imagen->baneada)
-                                <button class="btn btn-danger btn-sm" onclick="desbanearImagen({{ $imagen->id }})">Desbanear</button>
+                                <button class="btn btn-danger btn-sm" disabled>Desbanear</button>
                                 @else
-                                <button class="btn btn-success btn-sm" onclick="banearImagen({{ $imagen->id }})">Banear</button>
+                                <form action="/banear-imagen/{{ $imagen->id }}" method="POST">
+                                    @csrf
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm" name="motivo_ban" placeholder="Razón de ban" required>
+                                        <button type="submit" class="btn btn-success btn-sm">Banear</button>
+                                    </div>
+                                </form>
                                 @endif
                             </div>
                         </div>
@@ -31,5 +37,8 @@
         </ul>
     </div>
 </div>
+@if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
 
 @endsection

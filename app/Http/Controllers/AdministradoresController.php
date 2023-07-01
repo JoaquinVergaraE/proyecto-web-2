@@ -20,6 +20,19 @@ class AdministradoresController extends Controller
         return view('administradores.banDesban', compact('cuentas'));
     }
 
+    public function banearImagen(Request $request, $imagenId)
+    {
+        // Procesar el formulario y actualizar el atributo en la tabla de imágenes
+        $imagen = Imagen::find($imagenId);
+        $imagen->baneada = true;
+        $imagen->motivo_ban = $request->motivo_ban;
+        $imagen->save();
+
+        // Redirigir nuevamente a la misma página
+        return redirect()->back()->with('success', 'La imagen ha sido baneada exitosamente.');
+    }
+
+
     public function listar(){
         $perfiles = Perfil::all();
         return view('administradores.listar', compact('perfiles'));

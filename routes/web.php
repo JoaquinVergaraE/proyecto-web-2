@@ -45,6 +45,9 @@ Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('art
 Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');
 Route::get('/administradores/listar', [AdministradoresController::class, 'listar'])->name('administradores.listar')->middleware('auth');
 Route::get('/administradores/banDesban', [AdministradoresController::class, 'banDesban'])->name('administradores.banDesban')->middleware('auth');
+Route::post('/administradores/banearImagen',[AdministradoresController::class, 'banearImagen'])->name('administradores.banearImagen')->middleware('auth');
+
+
 
 
 
