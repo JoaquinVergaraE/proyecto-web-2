@@ -13,19 +13,21 @@
     </div>
 
     @foreach($imagenes as $imagen)
-    <div class="card">
-        <img src="{{ asset('storage/images/' . $imagen->archivo) }}" class="card-img-top" alt="Imagen">
-        <form action="{{ route('artistas.borrarImagen', $imagen->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta imagen?')">
-            @csrf
-            <input type="hidden" name="imagenId" value="{{ $imagen->id }}">
+    <div class="container mb-3">
+        <h1>Titulo: {{ $imagen->titulo }}</h1>
+        <div class="card card-sm">
+            <img src="{{ asset('/' . $imagen->archivo) }}" class="card-img-top" alt="Imagen">
             <div class="card-body">
-                <h1 class="card-title">{{ $imagen->titulo }}</h1>
-                <div class="d-flex mt-3">
-                    <button type="submit" class="btn btn-warning fw-semibold justify-content-center w-100">Borrar</button>
-                </div>
+                <form action="{{ route('artistas.borrarImagen', $imagen->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta imagen?')">
+                    @csrf
+                    <input type="hidden" name="imagenId" value="{{ $imagen->id }}">
+                    <button type="submit" class="btn btn-danger">Borrar</button>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
-    @endforeach
+@endforeach
+
+
 </div>
 @endsection

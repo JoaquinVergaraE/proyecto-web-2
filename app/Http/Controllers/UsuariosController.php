@@ -36,5 +36,11 @@ class UsuariosController extends Controller
         return redirect()->route('login');
     }
 
+    public function eliminarUsuario($user)
+    {
+        $cuenta = Cuenta::find($user);
+        $cuenta->delete();
+        return redirect()->back()->with('success', 'Usuario eliminado correctamente.');
+    }
     
 }

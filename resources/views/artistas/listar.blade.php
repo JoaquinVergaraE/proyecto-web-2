@@ -15,15 +15,16 @@
         <h1>{{ auth()->user()->user}} </h1>
     </div>
 @foreach($imagenes as $imagen)
-    <div class="card">
-        <img src="{{ asset('storage/images/' . $imagen->archivo) }}" class="card-img-top" alt="Imagen">
-
-        <div class="card-body">
-            <h1 class="card-title">Título: {{ $imagen->titulo }}</h1>
-            <p class="card-text">Id de la imagen: {{ $imagen->id }}</p>
-            <p class="card-text">Autor: {{ $imagen->cuenta_user }}</p>
+    @if(!$imagen->baneada)     
+        <div class="card">
+            <img src="{{ asset('/' . $imagen->archivo) }}" class="card-img-top" alt="Imagen">
+            <div class="card-body">
+                <h1 class="card-title">Título: {{ $imagen->titulo }}</h1>
+                <p class="card-text">Id de la imagen: {{ $imagen->id }}</p>
+                <p class="card-text">Autor: {{ $imagen->cuenta_user }}</p>
+            </div>
         </div>
-    </div>
+    @endif
 @endforeach
 </div>
 @endsection

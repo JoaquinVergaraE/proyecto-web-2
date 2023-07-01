@@ -28,6 +28,8 @@ Route::get('/', [LogController::class, 'login'])->name('login');
 
 Route::post('/usuarios/login',[UsuariosController::class,'autenticar'])->name('usuarios.autenticar');
 Route::get('/usuarios/salir',[UsuariosController::class,'salir'])->name('usuarios.salir');
+Route::post('/eliminarUsuario/{user}', [UsuariosController::class, 'eliminarUsuario'])->name('eliminar.usuario');
+
 
 Route::get('/cuentas',[CuentasController::class,'index'])->name('cuentas.index');
 Route::post('/cuentas',[CuentasController::class,'store'])->name('cuentas.store');
@@ -43,12 +45,17 @@ Route::get('/artistas/editar', [ArtistasController::class, 'editar'])->name('art
 Route::get('/artistas/borrar', [ArtistasController::class, 'borrar'])->name('artistas.borrar')->middleware('auth');
 Route::post('/cambiar-titulo', [ArtistasController::class, 'cambiarTitulo'])->name('artistas.cambiarTitulo')->middleware('auth');
 Route::post('/artistas/borrar-imagen', [ArtistasController::class, 'borrarImagen'])->name('artistas.borrarImagen')->middleware('auth');
+Route::get('/artistas/baneadas', [ArtistasController::class, 'baneadas'])->name('artistas.baneadas')->middleware('auth');
 
 
 Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');
 Route::get('/administradores/listar', [AdministradoresController::class, 'listar'])->name('administradores.listar')->middleware('auth');
 Route::get('/administradores/banDesban', [AdministradoresController::class, 'banDesban'])->name('administradores.banDesban')->middleware('auth');
-Route::post('/administradores/banearImagen',[AdministradoresController::class, 'banearImagen'])->name('administradores.banearImagen')->middleware('auth');
+Route::post('/administradores/banearImagen/{id}', [AdministradoresController::class, 'banearImagen'])->name('administradores.banearImagen')->middleware('auth');
+Route::get('/administradores/gestionar', [AdministradoresController::class, 'gestionar'])->name('administradores.gestionar')->middleware('auth');
+
+
+
 
 
 

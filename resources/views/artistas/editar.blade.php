@@ -15,13 +15,13 @@
 
 @foreach($imagenes as $imagen)
     <div class="card">
-        <img src="{{ asset('storage/images/' . $imagen->archivo) }}" class="card-img-top" alt="Imagen">
+        <img src="{{ asset('/' . $imagen->archivo) }}" class="card-img-top" alt="Imagen">
 
         <form action="{{ route('artistas.cambiarTitulo') }}" method="POST">
             @csrf
             <input type="hidden" name="imagenId" value="{{ $imagen->id }}">
             <div class="card-body">
-                <h1 class="card-title">{{ $imagen->titulo }}</h1>
+                <h1 class="card-title">Titulo: {{ $imagen->titulo }}</h1>
                 <div class="d-flex mt-3">
                     <input type="text" class="form-control form-control-sm" name="nuevoTitulo" placeholder="Nuevo título" required>
                     <button type="submit" class="btn btn-info fw-semibold justify-content-center w-100">Cambiar título</button>

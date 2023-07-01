@@ -16,7 +16,6 @@ class perfiles extends Seeder
         DB::table('perfiles')->insert([
             ['nombre' => 'Administrador'],
             ['nombre' => 'Artista'],
-            ['nombre' => 'Público sin cuenta'],
         ]);
     }
 }

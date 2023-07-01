@@ -17,7 +17,7 @@
             <a href="{{route('artistas.gestionar')}}" class="list-group-item text-decoration-non fw-semibold fst-italic bg-info text-light " style="font-size:0.9rem; border: 1px solid black;">Gestionar fotos</a>
         </div>
         <div class="rounded-3 mt-3">
-            <a href="{{route('artistas.gestionar')}}" class="list-group-item text-decoration-non fw-semibold fst-italic bg-info text-light " style="font-size:0.9rem; border: 1px solid black;">Ver fotos baneadas</a>
+            <a href="{{route('artistas.baneadas')}}" class="list-group-item text-decoration-non fw-semibold fst-italic bg-info text-light " style="font-size:0.9rem; border: 1px solid black;">Ver fotos baneadas</a>
         </div>
     </div>
 @endsection

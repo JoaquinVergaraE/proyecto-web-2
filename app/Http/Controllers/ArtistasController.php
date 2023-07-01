@@ -54,9 +54,13 @@ class ArtistasController extends Controller
         $imagen->cuenta_user = $user->user;
         $archivo=$request->file('imagenn');
         $nombreArchivo = uniqid().'.'.$archivo->extension();
-        $archivo->storeAs('images', $nombreArchivo);
+        /*$archivo->storeAs('images', $nombreArchivo, 'public');
         $rutaArchivo = $archivo->storeAs('images', $nombreArchivo);
         $imagen->archivo = $rutaArchivo;
+        $imagen->save();*/
+        $rutaArchivo = public_path('images') . '/' . $nombreArchivo;
+        $archivo->move(public_path('images'), $nombreArchivo);
+        $imagen->archivo = 'images/' . $nombreArchivo;
         $imagen->save();
 
         return redirect()->route('artistas.gestionar')->with('success', 'Imagen guardada exitosamente');
@@ -90,5 +94,11 @@ class ArtistasController extends Controller
         }
         
         return redirect()->back()->with('error', 'No se pudo eliminar la imagen.');
+    }
+
+    public function baneadas(){
+        $user = Auth::guard('web')->user();
+        $imagenes = $user->imagenes;
+        return view('artistas.baneadas', compact('imagenes'));
     }
 }

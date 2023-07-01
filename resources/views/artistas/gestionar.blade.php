@@ -1,4 +1,4 @@
-@extends('templates.volver')
+@extends('templates.master')
 
 @section('contenido-principal')
 

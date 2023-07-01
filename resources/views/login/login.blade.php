@@ -3,7 +3,7 @@
 @section('contenido-principal')
 <div class="bg-primary p-4 rounded-4 text-info align-items-center ">
     <div class="d-flex justify-content-center md-48 ">
-        <span class="material-icons" >&#xe3ae;</span>
+        <span class="material-icons" >&#xef3d;</span>
         
     </div>
     <div class="text-center fs-1 fw-semibold">
