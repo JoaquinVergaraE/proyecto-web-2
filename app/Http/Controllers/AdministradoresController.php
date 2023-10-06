@@ -46,4 +46,5 @@ class AdministradoresController extends Controller
         $perfiles = Perfil::all();
         return view('administradores.listar', compact('perfiles'));
     }
+    
 }

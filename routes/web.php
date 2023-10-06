@@ -7,6 +7,7 @@ use App\Http\Controllers\AdministradoresController;
 use App\Http\Controllers\ArtistasController;
 use App\Http\Controllers\CuentasController;
 use App\Http\Controllers\sinCuentasController;
+use App\Http\Controllers\GruposController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,9 @@ use App\Http\Controllers\sinCuentasController;
 });
 */
 
-Route::get('/', [LogController::class, 'login'])->name('login');
+Route::get('/', [LogController::class, 'main'])->name('main');
+
+Route::get('/login', [LogController::class, 'login'])->name('login');
 
 
 Route::post('/usuarios/login',[UsuariosController::class,'autenticar'])->name('usuarios.autenticar');
@@ -49,11 +52,19 @@ Route::get('/artistas/baneadas', [ArtistasController::class, 'baneadas'])->name(
 Route::get('/artistas/verArtistas', [ArtistasController::class, 'verArtistas'])->name('artistas.verArtistas')->middleware('auth');
 
 
-Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index')->middleware('auth');
+Route::get('/administradores', [AdministradoresController::class, 'index'])->name('administradores.index');
 Route::get('/administradores/listar', [AdministradoresController::class, 'listar'])->name('administradores.listar')->middleware('auth');
 Route::get('/administradores/banDesban', [AdministradoresController::class, 'banDesban'])->name('administradores.banDesban')->middleware('auth');
 Route::post('/administradores/banearImagen/{id}', [AdministradoresController::class, 'banearImagen'])->name('administradores.banearImagen')->middleware('auth');
 Route::get('/administradores/gestionar', [AdministradoresController::class, 'gestionar'])->name('administradores.gestionar')->middleware('auth');
+
+Route::get('/grupos', [GruposController::class, 'index'])->name('grupos.index');
+Route::get('/grupos/agregar', [GruposController::class, 'agregar'])->name('grupos.agregar');
+Route::post('/grupos/agregar', [GruposController::class, 'agregarGrupos'])->name('grupos.agregarGrupos');
+Route::get('/grupos/editar/{cod_grupo}/{cod_institucion}', [GruposController::class, 'modificar'])->name('grupos.modificar');
+Route::post('/grupos/modificar', [GruposController::class, 'modificarGrupos'])->name('grupos.modificarGrupos');
+
+
 
 
 

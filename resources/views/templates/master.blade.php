@@ -8,18 +8,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>fotos</title>
+    <title>Administrador</title>
 </head>
 
 <body class="bg-secondary d-flex vh-100 flex-column align-items-center" >
     <div class="container-fluid px-0 mx-0 bg-primary" data-bs-theme="dark"   >
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand text-info fw-semibold" href="{{route('login')}}">Home</a>
-          <form action="/logout" method="POST" class="d-flex">
-            @csrf
             <a href="{{route('usuarios.salir')}}" class="text-decoration-non text-info fw-semibold fst-italic">Cerrar Sesión</a>
-          </form>
         </div>
       </nav>
     </div>

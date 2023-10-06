@@ -1,6 +1,4 @@
-@extends('templates.master')
 
-@section('contenido-principal')
     <div class="d-flex flex-column container bg-primary rounded-4 p-4">
         <div class="d-flex justify-content-center md-48 text-info fw-semibold">
             <span class="material-icons" >&#xf02e;</span>
@@ -22,7 +20,6 @@
         </div>
     @endforeach
     </div>
-@endsection
 
 
 

@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="{{asset('css\Bootstrap-custom.min.css')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>fotos</title>
+    <title>MUSEO DE HISTORIA NATURAL DE VALPARAISO</title>
 </head>
-
-<body class="bg-secondary d-flex vh-100 flex-column align-items-center bg-white">
+<header class="bg-primary d-flex flex-column align-items-center bg-white">
     <div class="container-fluid px-0 mx-0 bg-primary" data-bs-theme="white">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
@@ -20,8 +19,14 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
                     </form>
                 </div>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid d-flex justify-content-between align-items-center">
+            </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand bg-light justify-content-center">
+                    <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -60,14 +65,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href="#">Preguntas</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="{{route('login')}}">Login</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-            </div>
-        </nav>
-    </div>
-        @yield('contenido-principal')
-        
-</body>
+</header>
+@yield('contenido-principal')  
 </html>
